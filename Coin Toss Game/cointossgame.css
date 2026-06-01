@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.coin {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: 20px auto;
+    transform-style: preserve-3d;
+}
+
+.coin.flip-heads {
+    animation: flipHeads 2s forwards;
+}
+
+.coin.flip-tails {
+    animation: flipTails 2s forwards;
+}
+
+.side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    backface-visibility: hidden;
+}
+
+.heads {
+    background: gold;
+}
+
+.tails {
+    background: silver;
+    transform: rotateY(180deg);
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #4facfe;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2196f3;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+@keyframes flipHeads {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(1800deg);
+    }
+}
+
+@keyframes flipTails {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(1980deg);
+    }
+}
